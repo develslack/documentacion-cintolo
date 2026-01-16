@@ -38,10 +38,12 @@ if (file_exists($dump_file)) {
 </head>
 <body>
     <nav id="sidebar">
-        <div class="sidebar-header">Documentación Cintolo</div>
+        <img src="img/logo-cintolo.png" class="img-rounded" alt="logo">
+        <div class="sidebar-header">Documentación</div>
         <a href="index.php?page=home" class="nav-item <?php echo $page == 'home' ? 'active' : ''; ?>">Inicio</a>
         <a href="index.php?page=grafica_er" class="nav-item <?php echo $page == 'grafica_er' ? 'active' : ''; ?>">Gráfica ER</a>
         <a href="index.php?page=frontend" class="nav-item <?php echo $page == 'frontend' ? 'active' : ''; ?>">Frontend</a>
+        <a href="index.php?page=backend" class="nav-item <?php echo $page == 'backend' ? 'active' : ''; ?>">Backend</a>
     </nav>
 
     <main id="content-area">
@@ -56,6 +58,9 @@ if (file_exists($dump_file)) {
             case 'frontend':
                 include 'frontend_viewer.php';
                 break;
+            case 'backend':
+                include 'backend_viewer.php';
+                break;
             case 'home':
             default:
                 echo '<div class="welcome-container">
@@ -63,6 +68,7 @@ if (file_exists($dump_file)) {
                         <p>Plataforma centralizada para la estructura de datos y procesos.</p>
                         <a href="index.php?page=grafica_er" class="btn-entry">Abrir Diagrama ER</a>
                         <a href="index.php?page=frontend" class="btn-entry">Abrir Documentación Frontend</a>
+                        <a href="index.php?page=backend" class="btn-entry">Abrir Documentación Backend</a>
                       </div>';
                 break;
         }
